@@ -15,7 +15,6 @@ WORKDIR /app
 # Ejecuta el contenedor en modo interactivo
 
 COPY . .
-RUN chmod +x terraform
 RUN cat main.tf
 RUN terraform init 
 RUN terraform plan -out=tfplan
