@@ -1,0 +1,13 @@
+stages:
+  - build
+  - deploy
+build-terraform:
+  stage: build
+  script:
+    - echo "build"
+    - docker build -t ${DOCKER_USERNAME}/terraform:${CI_COMMIT_SHORT_SHA} .
+deploy-terraform:
+  stage: deploy
+  script:
+    - echo "deploy"
+    - docker run ${DOCKER_USERNAME}/terraform:${CI_COMMIT_SHORT_SHA} terraform apply --auto-approve tfplan
