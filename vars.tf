@@ -5,7 +5,7 @@ variable "ec2_ami" {
   type = map(any)
 
   default = {
-    us-east-1 = "ami-0f8e81a3da6e2510a"
+    us-west-1 = "ami-0f8e81a3da6e2510a"
   }
 }
 
