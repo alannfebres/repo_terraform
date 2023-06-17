@@ -93,7 +93,6 @@ resource "aws_instance" "my-machine" {
     Name = "my-machine-${count.index}"
   }
 }
-
 output "ec2_global_ips" {
   value = ["${aws_instance.my-machine.*.public_ip}"]
 }
